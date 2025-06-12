@@ -1,4 +1,4 @@
-para esse projeto irei desenvolver um programa que apresente
+para esse projeto irei desenvolver um código de um jogo que apresente
 
 -> Simplicidade com qualidade
 -> Respeito às regras
