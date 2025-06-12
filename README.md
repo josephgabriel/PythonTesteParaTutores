@@ -4,7 +4,7 @@
 
 ## 🚀 Funcionalidades
 
-- ✅ Jogo Platformer desenvolvido 100% em Python
+- ✅ Jogo RogueLike desenvolvido 100% em Python
 - ✅ Implemetação das bibliotecas PgZero, Math e Random
 - ✅ Menu Principal com botões: Começar jogo, Musica e sons ON/OFF, Saida.
 - ✅ Música de fundo 🔊
