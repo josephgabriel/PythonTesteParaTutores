@@ -20,4 +20,4 @@
 - ✅ O código do projeto é completamente único e escrito de forma 
      independente.
 
-  Feito por José Gabriel Soares dos Santos — entre em contato pelo GitHub ou LinkedIn.
+  **Feito por José Gabriel Soares dos Santos — entre em contato pelo GitHub ou LinkedIn.**
