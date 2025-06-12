@@ -15,4 +15,4 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
    criei um diretorio chamado "RogueLikeGame", nele adicionei um arquivo main.py, images/ e sounds/, contendo respectivamente o código principal, os sprites(.png .jpeg) e arquivos .ogg.
 
    instalei a biblioteca Pyzero pelo terminal utilizando o comando 'pip install pgzero'.
-   as outras bibliotecas utilizadas não foi necessario fazer isso porque ja sao nativas do Python.
+   as outras bibliotecas utilizadas(Math e Random) não foi necessario fazer isso porque ja veem instaladas no Python.
