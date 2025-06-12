@@ -16,3 +16,10 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
 
    instalei a biblioteca Pyzero pelo terminal utilizando o comando 'pip install pgzero'.
    as outras bibliotecas utilizadas(Math e Random) não foi necessario fazer isso porque ja veem instaladas no Python.
+
+3. **CRIAÇÃO DE UM MENU**
+   A criação do Menu deve seguir as especificações:
+   '✅ Menu Principal com botões: Começar jogo, Musica e sons ON/OFF, Saida.'
+
+   com isso começei a programação
+   
