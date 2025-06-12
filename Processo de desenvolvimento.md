@@ -4,7 +4,7 @@ para esse projeto irei desenvolver um código de um jogo que apresente
 -> Respeito às regras
 -> Demonstração de didática, organização e domínio
 
-1. ESCOLHA DO GENÊRO
+1. <span style="color:red">ESCOLHA DO GENÊRO</span>
 
 Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente entre as células e evita inimigos, igual no exemplo da imagem abaixo.
 
