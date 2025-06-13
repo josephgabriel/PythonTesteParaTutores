@@ -69,7 +69,8 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
    tambem editei o metodo enemy_Ai para ficar algo mais visivelmente legal
    ![image](https://github.com/user-attachments/assets/677983f3-46ac-4fa4-84a0-c79b230b0f26)
 
-   outro problema que eu encontrei foi que meu heroi e inimigos extrapolavam a borda, isso eu resolvi adicionando esses codigos no final do meu metodo enemy_Ai
+   outro problema que eu encontrei foi que meus inimigos extrapolavam a borda
+   isso eu resolvi adicionando esses codigos no final do meu metodo enemy_Ai
    ![image](https://github.com/user-attachments/assets/8b376722-8c1d-445b-8c1b-f9e1390ca966)
 
    
