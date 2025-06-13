@@ -39,6 +39,15 @@ chamarei o jogo de "Goblin slayer".
 4. **ESTRUTURA BASE DO JOGO**
    com a criação de um menu simples irei partir já para a criação do jogo em si
 
-   começei criando duas **Classes** de personagens um Player (possuindo Posição, Animação de sprite (parado e andando)  e Detecção de teclas) e um Enemy (Movimento 
-   simples,Animação, Colisão com jogador).
+   começei criando uma **class** chamada character(personagem) que será usada para o player e para os enemys.
+
+   Definir uma variavel chamada HERO_SPEED para receber a velocidade do player
+
+   a class character contem 4 metodos
+   '__init__'(Configura posição, imagens e variáveis iniciais)
+   'update'	(Atualiza animação e retângulo para colisão)
+   'draw' (Desenha o personagem na tela com a imagem certa)
+   'move' (Atualiza posição e estado de movimento)
+
+   
    
