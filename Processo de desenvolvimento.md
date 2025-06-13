@@ -69,9 +69,24 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
    tambem editei o metodo enemy_Ai para ficar algo mais visivelmente legal
    ![image](https://github.com/user-attachments/assets/677983f3-46ac-4fa4-84a0-c79b230b0f26)
 
+   tambem fiz um metodo para impedir o heroi de sair da tela.
+
    outro problema que eu encontrei foi que meus inimigos extrapolavam a borda
    isso eu resolvi adicionando esses codigos no final do meu metodo enemy_Ai
    
    ![image](https://github.com/user-attachments/assets/8b376722-8c1d-445b-8c1b-f9e1390ca966)
+
+   mas o que acontece se o heroi tocar no inimigo? eu fiz para que toda vez que o heroi tocar em um inimigo ele volte a posicção inicial, fiz isso definindo uma posição inicial ao heroi e na enemy_ai fiz com que toda vez que houvesse uma colisão do heroi com inimigo voltasse a posição original.
+
+   mais a frente criei 3 tipos de backgrounds para 3 fases que eu quero implementar no jogo um verde(facil), marrom(medio) e vermelho(dificil)
+
+   para a criação de obstaculos criei uma lista chamada 'obstacles'
+
+   ![image](https://github.com/user-attachments/assets/45f1a94c-f374-44f3-8b75-341dc60d3603)
+
+   Primeiro tentamos mover só no eixo X.
+   Se colidir, desfazemos o movimento no X.
+   Depois tentamos mover no eixo Y.
+   Se colidir, desfazemos o movimento no Y.
 
    
