@@ -31,9 +31,9 @@ chamarei o jogo de "Goblin slayer".
 
    PyZero não tem um sistema de botões pronto como em outros frameworks, mas a gente pode:
    
-   *Desenhar "botões" com screen.draw.filled_rect() e screen.draw.text()
-   /nDetectar cliques com on_mouse_down() e verificar colisão com Rect.collidepoint()
-   /nControlar estados do jogo com variáveis (ex: tela_atual = 'menu')
+   Desenhar "botões" com screen.draw.filled_rect() e screen.draw.text()
+   Detectar cliques com on_mouse_down() e verificar colisão com Rect.collidepoint()
+   Controlar estados do jogo com variáveis (ex: tela_atual = 'menu')
 
    ![image](https://github.com/user-attachments/assets/6c874d69-92cf-47d3-9684-9919a09967e5)
 
