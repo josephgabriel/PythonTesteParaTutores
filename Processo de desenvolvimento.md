@@ -36,4 +36,9 @@ chamarei o jogo de "Goblin slayer".
 
    ![image](https://github.com/user-attachments/assets/6c874d69-92cf-47d3-9684-9919a09967e5)
 
+4. **ESTRUTURA BASE DO JOGO**
+   com a criação de um menu simples irei partir já para a criação do jogo em si
+
+   começei criando duas **Classes** de personagens um Player (possuindo Posição, Animação de sprite (parado e andando)  e Detecção de teclas) e um Enemy (Movimento 
+   simples,Animação, Colisão com jogador).
    
