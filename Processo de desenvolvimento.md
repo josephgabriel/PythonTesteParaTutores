@@ -60,6 +60,14 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
 
    adicionei o metodo tipico update() do pgzero representando basicamento o motor do jogo que roda a cada frame atualizando os movimentos do player e as ações do inimigos 
    a cada instante.
-   
+
+   Encontrei algumas dificuldades porque meus inimigos ficavam tremendo e não se moviam de uma forma legal
+
+   para melhorar meus inimigos eu comecei definindo atributos extras da class character utilizando a biblioteca random
+   ![image](https://github.com/user-attachments/assets/9d69b8b1-102e-4ddb-9552-6b56e51ca8cd)
+
+   tambem editei o metodo enemy_Ai para ficar algo mais visivelmente legal
+   ![image](https://github.com/user-attachments/assets/677983f3-46ac-4fa4-84a0-c79b230b0f26)
+
    
    
