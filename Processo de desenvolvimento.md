@@ -49,5 +49,16 @@ chamarei o jogo de "Goblin slayer".
    'draw' (Desenha o personagem na tela com a imagem certa)
    'move' (Atualiza posição e estado de movimento)
 
+   adicionei uma parte em que colocarei as imagens sprites do meu heroi e dos inimigos
+  (hero_idle, hero_walk, enemy_idle, enemy_walk)
+
+   criei os herois e inimigos
+   hero = Character(100, 100, hero_idle, hero_walk)
+
+   para os inimigos eu criei um AI simples para eles fazerem a patrulha da princesa
+
+   adicionei o metodo tipico update() do pgzero representando basicamento o motor do jogo que roda a cada frame atualizando os movimentos do player e as ações do inimigos 
+   a cada instante.
+   
    
    
