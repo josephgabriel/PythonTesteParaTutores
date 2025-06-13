@@ -46,7 +46,10 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
    'move' (Atualiza posição e estado de movimento)
 
    adicionei uma parte em que colocarei as imagens sprites do meu heroi e dos inimigos
-  (hero_idle, hero_walk, enemy_idle, enemy_walk)
+  (hero_idle, hero_walk, enemy_idle, enemy_walk) utilizei a ferramenta web PISKEL para criar designs simples em pixel art.
+
+![image](https://github.com/user-attachments/assets/9a1fe8f7-4a45-409d-b605-07c00e3a664f)
+
 
    criei os herois e inimigos
 
