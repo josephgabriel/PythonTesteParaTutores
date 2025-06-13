@@ -80,7 +80,7 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
 
    mais a frente criei 3 tipos de backgrounds para 3 fases que eu quero implementar no jogo um verde(facil), marrom(medio) e vermelho(dificil)
 
-   para a criação de obstaculos criei uma lista chamada 'obstacles'
+   para a criação de obstaculos criei uma lista chamada 'obstacles' e o seguinte trecho do codigo em def update()
 
    ![image](https://github.com/user-attachments/assets/45f1a94c-f374-44f3-8b75-341dc60d3603)
 
