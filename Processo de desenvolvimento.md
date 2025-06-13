@@ -92,4 +92,9 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
    minha próxima preocupação agora é fazer os inimigos não atravessarem os obstaculos, criar uma especie de 'linha de chegada' e configurar para que o player ao chegar 
    nela vá para a proxima fase fazendo isso até ir ao final exibindo uma tela de 'vitoria' e depois cuidar dos efeitos sonoros e terminar de personalizar o menu para deixar algo mais bonito.
 
+para resolver o problema dos inimigos atravessarem os obstaculos atualizei o **def enemy_ai** e separei os movimentos deles em eixo x e y e fiz eles mudarem suas direções quando detectassem uma colisão com obstaculo.
+
+para conseguir fazer o player mudar de fase quando chegasse na linha de chegada declarei uma variavel 'current_level', a premissa do jogo é que o Heroi esta atras de uma espada maior então declarei a varivael que será a linha de chegada 'sword_chest'.
+
+quando o player colide com a sword_
    
