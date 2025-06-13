@@ -53,7 +53,8 @@ chamarei o jogo de "Goblin slayer".
   (hero_idle, hero_walk, enemy_idle, enemy_walk)
 
    criei os herois e inimigos
-   hero = Character(100, 100, hero_idle, hero_walk)
+
+    hero = Character(100, 100, hero_idle, hero_walk)
 
    para os inimigos eu criei um AI simples para eles fazerem a patrulha da princesa
 
