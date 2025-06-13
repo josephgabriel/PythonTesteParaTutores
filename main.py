@@ -46,11 +46,11 @@ class Character:
 
 # Imagens para herói e inimigos
 
-hero_idle = []
-hero_walk = []
+hero_idle = [images.hero_idle1, images.hero_idle2]
+hero_walk = [images.hero_walk1, images.hero_walk2]
 
-enemy_idle = []
-enemy_walk = []
+enemy_idle = [images.enemy_idle1, images.enemy_idle2]
+enemy_walk = [images.enemy_walk1, images.enemy_walk2]
 
 #criação de herois e inimigos
 hero = Character(100, 100, hero_idle, hero_walk)
@@ -90,7 +90,7 @@ def draw():
 
 
 def draw_menu():
-    screen.fill((30, 30, 30))  # Fundo escuro
+    screen.fill((10, 50, 50))  # Fundo escuro
 
     # Desenha os botões
     screen.draw.filled_rect(button_play, (50, 100, 200))
