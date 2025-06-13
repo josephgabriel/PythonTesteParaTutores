@@ -89,4 +89,7 @@ Escolhi fazer um roguelike com visão de cima, onde o herói se move suavemente 
    Depois tentamos mover no eixo Y.
    Se colidir, desfazemos o movimento no Y.
 
+   minha próxima preocupação agora é fazer os inimigos não atravessarem os obstaculos, criar uma especie de 'linha de chegada' e configurar para que o player ao chegar 
+   nela vá para a proxima fase fazendo isso até ir ao final exibindo uma tela de 'vitoria' e depois cuidar dos efeitos sonoros e terminar de personalizar o menu para deixar algo mais bonito.
+
    
