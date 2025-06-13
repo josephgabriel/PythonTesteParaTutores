@@ -26,4 +26,15 @@ chamarei o jogo de "Goblin slayer".
    '✅ Menu Principal com botões: Começar jogo, Musica e sons ON/OFF, Saida.'
 
    com isso começei a programação
+
+   segundo a documentação do PyZero
+
+   PyZero não tem um sistema de botões pronto como em outros frameworks, mas a gente pode:
+   
+   *Desenhar "botões" com screen.draw.filled_rect() e screen.draw.text()
+   **Detectar cliques com on_mouse_down() e verificar colisão com Rect.collidepoint()
+   ***Controlar estados do jogo com variáveis (ex: tela_atual = 'menu')
+
+   ![image](https://github.com/user-attachments/assets/6c874d69-92cf-47d3-9684-9919a09967e5)
+
    
