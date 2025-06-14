@@ -2,17 +2,18 @@ import pgzrun
 from pygame import Rect
 import random
 
-# Tamanho da janela
 WIDTH = 800
 HEIGHT = 600
 
-# Variáveis de estado: Usamos isso para: Saber se estamos no menu principal e saber se o som está ligado ou desligado
 current_screen = 'menu'
 sound_on = True
 current_level = 1
+background_name = "background"
 sword_chest = Rect((700, 500), (40, 40))
+sword_chest2 = Rect((600, 500), (40, 40))
+sword_chest3 = Rect((600, 450), (40, 100))
+enemies = []
 
-# Botões como pygame.Rect (posição, tamanho) que cria um retangulo clicavvel
 button_play = Rect((500, 200), (200, 50))
 button_sound = Rect((500, 280), (200, 50))
 button_quit = Rect((500, 360), (200, 50))
@@ -20,7 +21,6 @@ button_quit = Rect((500, 360), (200, 50))
 HERO_SPEED = 3
 HERO_START_POS = [100, 100]
 
-#classe Character para o jogador e para os inimigos
 class Character:
     def __init__(self, x, y, images_idle, images_walk):
         self.pos = [x, y]
@@ -51,23 +51,13 @@ class Character:
         self.pos[1] += dy
         self.is_walking = (dx != 0 or dy != 0)
 
-# Imagens para herói e inimigos
-
 hero_idle = [images.hero_idle1, images.hero_idle2]
 hero_walk = [images.hero_walk1, images.hero_walk2]
 
 enemy_idle = [images.enemy_idle1, images.enemy_idle2]
 enemy_walk = [images.enemy_walk1, images.enemy_walk2]
 
-#criação de herois e inimigos
 hero = Character(HERO_START_POS[0], HERO_START_POS[1], hero_idle, hero_walk)
-
-enemies = []
-for _ in range(3):
-    x = random.randint(100, WIDTH - 150)
-    y = random.randint(100, HEIGHT - 150)
-    enemy = Character(x, y, enemy_idle, enemy_walk)
-    enemies.append(enemy)
 
 obstacles = [
     Rect((200, 150), (100, 100)),
@@ -75,8 +65,6 @@ obstacles = [
     Rect((600, 100), (50, 200)),
 ]
 
-
-# IA simples para inimigos
 def enemy_ai(enemy):
     speed = 0.30
     dx = dy = 0
@@ -96,28 +84,112 @@ def enemy_ai(enemy):
     elif enemy.direction == 'down':
         dy = speed
 
-    # Testa movimento horizontal com colisão
+    
     enemy.pos[0] += dx
     enemy.update()
     if any(enemy.rect.colliderect(ob) for ob in obstacles):
         enemy.pos[0] -= dx
-        # opcional: muda de direção
+        
         enemy.direction = random.choice(['up', 'down'])
 
-    # Testa movimento vertical com colisão
     enemy.pos[1] += dy
     enemy.update()
     if any(enemy.rect.colliderect(ob) for ob in obstacles):
         enemy.pos[1] -= dy
-        # opcional: muda de direção
+
         enemy.direction = random.choice(['left', 'right'])
 
     enemy.is_walking = (dx != 0 or dy != 0)
     enemy.update()
 
+    enemy_width = enemy.rect.width
+    enemy_height = enemy.rect.height
 
+    if enemy.pos[0] < 0:
+        enemy.pos[0] = 0
+    elif enemy.pos[0] > WIDTH - enemy_width:
+        enemy.pos[0] = WIDTH - enemy_width
 
-#Desenha o botão como um retângulo colorido e o texto centralizado nesse botão
+    if enemy.pos[1] < 0:
+        enemy.pos[1] = 0
+    elif enemy.pos[1] > HEIGHT - enemy_height:
+        enemy.pos[1] = HEIGHT - enemy_height
+
+def load_level(level):
+    global current_level, obstacles, background_name, hero, enemies
+
+    current_level = level
+    enemies = []
+
+    if level == 1:
+        background_name = "background"
+
+        obstacles = [
+            Rect((200, 150), (100, 100)),
+            Rect((400, 300), (150, 50)),
+            Rect((600, 100), (50, 200)),
+        ]
+
+        enemy_positions = [(300, 300)]
+        for pos in enemy_positions:
+            enemy = Character(pos[0], pos[1], enemy_idle, enemy_walk)
+            enemies.append(enemy)
+
+        hero.pos = HERO_START_POS.copy()
+        hero.update()
+
+    elif level == 2:
+        hero.images_idle = [images.herolv2_idle1, images.herolv2_idle2]
+        hero.images_walk = [images.herolv2_walk1, images.herolv2_walk2]
+
+        background_name = "background2"
+
+        obstacles = [
+            Rect((150, 80), (200, 30)),
+            Rect((300, 250), (50, 200)),
+            Rect((500, 400), (200, 50)),
+        ]
+
+        enemy_positions = [(100, 400), (600, 300)]
+        for pos in enemy_positions:
+            enemy = Character(pos[0], pos[1], enemy_idle, enemy_walk)
+            enemies.append(enemy)
+
+        hero.pos = HERO_START_POS.copy()
+        hero.update()
+
+    elif level == 3:
+        hero.images_idle = [images.herolv3_idle1, images.herolv3_idle2]
+        hero.images_walk = [images.herolv3_walk1, images.herolv3_walk2]
+
+        background_name = "background3"
+
+        obstacles = [
+            Rect((150, 80), (200, 30)),
+            Rect((220, 250), (90, 150)),
+            Rect((300, 220), (170, 170)),
+            ]
+        
+        enemy_positions = [(200, 200), (400, 400), (600, 100)]
+        for pos in enemy_positions:
+            enemy = Character(pos[0], pos[1], enemy_idle, enemy_walk)
+            enemies.append(enemy)
+
+        hero.pos = HERO_START_POS.copy()
+        hero.update()
+
+    elif level == 4:
+        hero.images_idle = [images.herolv4_idle1, images.herolv4_idle2]
+        hero.images_walk = [images.herolv4_walk1, images.herolv4_walk2]
+
+        background_name = "last"
+        obstacles = []
+        enemies = []
+        hero.pos = HERO_START_POS.copy()
+        hero.update()
+
+load_level(current_level)
+
 def draw():
     screen.clear()
 
@@ -130,7 +202,6 @@ def draw():
 def draw_menu():
     screen.fill((10, 50, 50))
 
-    # Desenha os botões
     screen.draw.filled_rect(button_play, (50, 100, 200))
     screen.draw.text("Começar jogo", center=button_play.center, fontsize=30, color="white")
 
@@ -143,19 +214,28 @@ def draw_menu():
 
 
 def draw_game():
-    screen.blit("background", (0, 0))
+    screen.blit(background_name, (0, 0))
 
     for obstacle in obstacles:
         screen.draw.filled_rect(obstacle, (100, 100, 100))
-
-    if current_level == 1:
-        screen.draw.filled_rect(sword_chest, (255, 215, 0))
 
     hero.draw()
 
     for enemy in enemies:
         enemy.draw()
 
+    if current_level == 1:
+        screen.draw.filled_rect(sword_chest, (255, 215, 0))
+
+    if current_level == 2:
+        screen.draw.filled_rect(sword_chest2, (255, 215, 0))
+
+    if current_level == 3:
+        screen.draw.filled_rect(sword_chest3, (255, 255, 0))
+
+    if current_level == 4:
+        screen.draw.text("Você ganhou!", center=(WIDTH // 2, HEIGHT // 2), fontsize=60, color="yellow")
+        screen.draw.text("Jogo feito por José Gabriel Soares dos Santos", center=(WIDTH // 2, HEIGHT // 1.3), fontsize=30, color="white")
 
 def update():
     global current_screen
@@ -185,7 +265,14 @@ def update():
         hero.update()
 
         if current_level == 1 and hero.rect.colliderect(sword_chest):
-        load_level(2)
+            load_level(2)
+
+        if current_level == 2 and hero.rect.colliderect(sword_chest2):
+            load_level(3)
+
+        if current_level == 3 and hero.rect.colliderect(sword_chest3):
+            load_level(4)
+
 
         hero_width = hero.rect.width
         hero_height = hero.rect.height
@@ -205,16 +292,23 @@ def update():
         hero.update()
 
         for enemy in enemies:
-            enemy_ai(enemy)
-            enemy.update()
+         enemy_ai(enemy)
+         enemy.update()
 
-            for enemy in enemies:
-                enemy_ai(enemy)
-                enemy.update()
+         if current_level in [1, 2, 3]:
+           enemy.draw()
 
-                if hero.rect.colliderect(enemy.rect):
-                   hero.pos = HERO_START_POS.copy()
 
+        for enemy in enemies:
+         enemy_ai(enemy)
+         enemy.update()
+
+         if current_level in [1, 2, 3]:
+          enemy.draw()
+ 
+         if hero.rect.colliderect(enemy.rect):
+          hero.pos = HERO_START_POS.copy()
+          hero.update()
 
 
 def on_mouse_down(pos):
