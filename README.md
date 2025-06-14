@@ -2,6 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/b9f8ccd2-7dd1-4b52-ab08-52fe2a62cc8d)
 
+a história do jogo se baseia em um cavaleiro que por ter uma espada muito pequena sai em uma aventura coletando espadas cada vez melhores até chegar naquela que finalmente o faça se sentir um membro da corte respeitado!
 
 ## 🚀 Funcionalidades
 
