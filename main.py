@@ -250,7 +250,7 @@ def update():
         global music_playing
 
         if sound_on and not music_playing:
-         sounds.background_music.play(-1)  # -1 = loop infinito
+         sounds.background_music.play(-1) 
          music_playing = True
         elif not sound_on and music_playing:
           sounds.background_music.stop()
