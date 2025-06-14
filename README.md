@@ -1,6 +1,7 @@
 🖼️ Demonstração
 
-![Exemplo](./screenshot.png)
+![image](https://github.com/user-attachments/assets/b9f8ccd2-7dd1-4b52-ab08-52fe2a62cc8d)
+
 
 ## 🚀 Funcionalidades
 
