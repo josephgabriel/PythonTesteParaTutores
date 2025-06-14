@@ -59,4 +59,10 @@ para os inimigos eu criei um AI simples para eles fazerem patrulha
 adicionei o metodo tipico update() do pgzero representando basicamento o motor do jogo que roda a cada frame atualizando os movimentos do player e as ações do inimigos 
 a cada instante.
 
+5. **ARQUIVOS DE SOM**
+
+   eu decidir adiconar tres tipos de som
+   
+   🎵 Som de fundo, 💥 Som de colisão, 🏆 Som de vitória
+
    
