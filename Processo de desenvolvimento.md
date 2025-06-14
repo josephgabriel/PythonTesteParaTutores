@@ -65,6 +65,6 @@ a cada instante.
    
    🎵 Som de fundo, 💥 Som de colisão, 🏆 Som de vitória
 
-   baixei eles na internet depois foi só modificar algumas partes do codigo para que eles rodassem caso o usuario quisesse.
+   baixei eles na internet pelo 'freesound' e depois foi só modificar algumas partes do codigo para que eles rodassem caso o usuario quisesse.
 
    
