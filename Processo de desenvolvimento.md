@@ -57,8 +57,6 @@ estava tendo problemas com os inimigos nascendo encima dos obstaculos então ao 
 para os inimigos eu criei um AI simples para eles fazerem patrulha
 
 adicionei o metodo tipico update() do pgzero representando basicamento o motor do jogo que roda a cada frame atualizando os movimentos do player e as ações do inimigos 
-a cada instan
-   
-   ![image](https://github.com/user-attachments/assets/8b376722-8c1d-445b-8c1b-f9e1390ca966)
+a cada instante.
 
    
