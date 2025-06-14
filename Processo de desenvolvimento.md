@@ -61,8 +61,8 @@ a cada instante.
 
 5. **ARQUIVOS DE SOM**
 
-   eu decidir adiconar tres tipos de som
+   eu decidir adiconar 4 tipos de som
    
-   🎵 Som de fundo, 💥 Som de colisão, 🏆 Som de vitória
+   Som do Menu, 🎵 Som de fundo, 💥 Som de colisão, 🏆 Som de vitória
 
    
