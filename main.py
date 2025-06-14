@@ -13,6 +13,7 @@ sword_chest = Rect((700, 500), (40, 40))
 sword_chest2 = Rect((600, 500), (40, 40))
 sword_chest3 = Rect((600, 450), (40, 100))
 enemies = []
+music_playing = False
 
 button_play = Rect((500, 200), (200, 50))
 button_sound = Rect((500, 280), (200, 50))
@@ -188,6 +189,9 @@ def load_level(level):
         hero.pos = HERO_START_POS.copy()
         hero.update()
 
+        if sound_on:
+         sounds.background_music.stop()
+
 load_level(current_level)
 
 def draw():
@@ -201,6 +205,9 @@ def draw():
 
 def draw_menu():
     screen.fill((10, 50, 50))
+    screen.draw.text("Eu quero uma espada maior!", center=(WIDTH // 2, 100), fontsize=60, color="gold")
+
+    screen.draw.text("Desvie dos inimigos, ache os baús, pegue as espadas e ajude o cavaleiro reaLizar seu sonho!", center=(WIDTH // 2, 150), fontsize=20, color="gold")
 
     screen.draw.filled_rect(button_play, (50, 100, 200))
     screen.draw.text("Começar jogo", center=button_play.center, fontsize=30, color="white")
@@ -240,6 +247,15 @@ def draw_game():
 def update():
     global current_screen
     if current_screen == 'jogo':
+        global music_playing
+
+        if sound_on and not music_playing:
+         sounds.background_music.play(-1)  # -1 = loop infinito
+         music_playing = True
+        elif not sound_on and music_playing:
+          sounds.background_music.stop()
+          music_playing = False
+
         dx = dy = 0
         if keyboard.left:
             dx = -HERO_SPEED
@@ -271,7 +287,9 @@ def update():
             load_level(3)
 
         if current_level == 3 and hero.rect.colliderect(sword_chest3):
-            load_level(4)
+          if sound_on:
+            sounds.victory.play()
+          load_level(4)
 
 
         hero_width = hero.rect.width
@@ -297,30 +315,28 @@ def update():
 
          if current_level in [1, 2, 3]:
            enemy.draw()
-
-
-        for enemy in enemies:
-         enemy_ai(enemy)
-         enemy.update()
-
-         if current_level in [1, 2, 3]:
-          enemy.draw()
  
          if hero.rect.colliderect(enemy.rect):
-          hero.pos = HERO_START_POS.copy()
-          hero.update()
+            if sound_on:
+             sounds.hit.play()
+            hero.pos = HERO_START_POS.copy()
+            hero.update()
 
 
 def on_mouse_down(pos):
-    global current_screen, sound_on
+    global current_screen, sound_on, music_playing
 
     if current_screen == 'menu':
         if button_play.collidepoint(pos):
             current_screen = 'jogo'
         elif button_sound.collidepoint(pos):
             sound_on = not sound_on
+            if not sound_on:
+                sounds.background_music.stop()
+                music_playing = False
         elif button_quit.collidepoint(pos):
             quit()
+
 
 
 pgzrun.go()
